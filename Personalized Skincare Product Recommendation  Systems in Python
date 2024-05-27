@@ -1,0 +1,54 @@
+class SkincareProduct:
+    def __init__(self, name, brand, price, ingredients):
+        self.name = name
+        self.brand = brand
+        self.price = price
+        self.ingredients = ingredients
+    
+    def display_info(self):
+        print(f"Name: {self.name}")
+        print(f"Brand: {self.brand}")
+        print(f"Price: ₱{self.price}")
+        print("Ingredients:")
+        for ingredient in self.ingredients:
+            print(f"- {ingredient}")
+
+class Moisturizer(SkincareProduct):
+    def __init__(self, name, brand, price, ingredients, skin_type):
+        super().__init__(name, brand, price, ingredients)
+        self.skin_type = skin_type
+    
+    def display_info(self):
+        super().display_info()
+        print(f"Suitable for {self.skin_type} skin.")
+
+class Cleanser(SkincareProduct):
+    def __init__(self, name, brand, price, ingredients, skin_type):
+        super().__init__(name, brand, price, ingredients)
+        self.skin_type = skin_type
+    
+    def display_info(self):
+        super().display_info()
+        print(f"Suitable for {self.skin_type} skin.")
+
+class Sunscreen(SkincareProduct):
+    def __init__(self, name, brand, price, ingredients, skin_type):
+        super().__init__(name, brand, price, ingredients)
+        self.skin_type = skin_type
+    
+    def display_info(self):
+        super().display_info()
+        print(f"Suitable for {self.skin_type} skin.")
+
+# Creating objects
+cleanser = Cleanser("Cleanser", "Cetaphil", 9.99, ["Water", "Cetyl Alcohol", "Propylene Glycol"], "All skin types")
+moisturizer = Moisturizer("Moisturizer", "CeraVe", 15.99, ["Water", "Glycerin", "Hyaluronic Acid"], "Normal to Dry")
+sunscreen = Sunscreen("Sunscreen", "Neutrogena", 12.49, ["Octocrylene", "Avobenzone", "Oxybenzone"], "All skin types")
+
+# Displaying information about the products
+print("Cleanser:")
+cleanser.display_info()
+print("\nMoisturizer:")
+moisturizer.display_info()
+print("\nSunscreen:")
+sunscreen.display_info()
